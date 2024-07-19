@@ -40,9 +40,6 @@
   position: relative;
   width: 240px;
   border-radius: 8px;
-  border: 4px solid #000;
-  background-color: #ffa500;
-  box-shadow: 2px 4px 0px 0px #000;
   padding-right: 16px;
 }
 

@@ -9,7 +9,7 @@
 .fruitWrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 15px;
   padding-bottom: 24px;
 }
 .bodyWrapper {

@@ -1,13 +1,30 @@
 import styles from "./FiltersSelect.module.css";
-const FilterSelect = () => {
+
+type Value = {
+  value: string
+  title: string
+}
+
+
+type Props = {
+  onChange?: (item: string) => void
+  values: Value[]
+}
+
+
+
+const FilterSelect = (props:Props) => {
+
+    const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      props.onChange?.(e.target.value)
+    }
   return (
     <div className={styles.wrapper}>
       <div className={styles.selectWrapper}>
-        <select className={styles.customSelect}>
-          <option value="price-high-to-low">All</option>
-          <option value="price-low-to-high">Green</option>
-          <option value="newest-first">Orange</option>
-          <option value="oldest-first">Red</option>
+        <select className={styles.customSelect}  onChange={onSelectChange}>
+          {
+            props.values?.map(item => <option value={item.value}>{item.title}</option>)
+          }
         </select>
       </div>
     </div>
